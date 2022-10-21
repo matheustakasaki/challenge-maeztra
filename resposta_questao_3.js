@@ -7,29 +7,34 @@ function handleNumberToArray(number) {
 
 
 function h(arr) {
-
-    let filtrado = []
+    let duplicados = []
 
     for (let index = 0; index < arr.length; index++) {
+        const element = arr[index];
+        let existe = false
 
-        console.log('Item atual: ', arr[index]);
+        for (let j = 0; j < arr.length; j++) {
 
-        for (let j = index + 1; j < arr.length; j++) {
-            const target = handleNumberToArray(arr[j]) // [2,2]
+            let arr2 = handleNumberToArray(element)
+            console.log(arr2)
 
-            console.log('PRÓXIMO', target);
-
-            if (target.includes(arr[index])) {
-                console.log('Número já existente \n')
+            if (arr2.includes(arr[index])) {
                 break
-            } else {
-                filtrado.push(arr[index])
             }
+
         }
 
     }
 
-    return filtrado
+    return duplicados
 }
 // filtrado.push(parseInt(target.join()))
-console.log(h([2, 22, 3]))
+console.log(h([1, 12, 3]))
+
+
+
+// const arr2 = [1, 1, 11, 3]
+
+// const filteredArray = arr2.filter(function (ele, pos) {
+//     return arr2.indexOf(ele) == pos;
+// })
