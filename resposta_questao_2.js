@@ -1,47 +1,58 @@
-const arr = [2, 22, 3, 4, 5,];
+function handleNumberToArray(number) {
+    let arr = String(number).split("").map((num) => {
+        return Number(num)
+    })
+    return arr
+}
+function countItems(arr) {
+    const countMap = Object.create(null);
 
-
-// [2, 22, 3, 4]
-const eliminaDuplicados = function (arr) {
-
-    // const filteredArray = arr.filter(function (ele, pos) {
-    //     return arr.indexOf(ele) == pos;
-    // })
-
-    let duplicados = []
-
-    // for (let index = 0; index < arr.length; index++) {
-
-    //     for (let index2 = index + 1; index2 < arr.length; index2++) {
-    //         if (arr.indexOf(arr[index2]) === -1) {
-    //             duplicados.push(arr[index2]);
-
-    //             console.log('Nova coleção de numbers é : ' + duplicados);
-
-    //         } else if (arr.indexOf(arr[index2]) > -1) {
-    //             duplicados.splice(arr[index2])
-    //             console.log(arr[index2] + ' já existe na coleção de numbers.');
-    //         }
-
-    //     }
-    //     arr.length--;
-    // }
-
-    for (let index = 0; index < arr.length; index++) {
-
-        for (let index2 = index + 1; index2 < arr.length; index2++) {
-
-            let checkNext = Array.from(arr[index2])
-            console.log(checkNext)
-        }
-        arr.length--;
+    for (const element of arr) {
+        // Basicamente, estamos dizendo: atribua à `countMap[element]` o valor
+        // atual (ou zero, caso não existir) somado ao número 1.
+        countMap[element] = (countMap[element] || 0) + 1;
     }
 
-    return duplicados
-
-    // return 1;
+    return countMap;
 }
 
-console.log(eliminaDuplicados(arr))
 
+function contar(arr, elemento) {
+    const countMap = Object.create(null);
+    for (let i = 0; i < arr.length; i++) {
+
+        if (arr.includes(elemento)) {
+            countMap[elemento] = (countMap[elemento] || 0) + 1;
+        }
+
+    }
+
+    return countMap;
+}
+function contarOcorrencias(arr) {
+
+
+    let duplos = []
+    let contador = 0
+    const countMap = Object.create(duplos);
+
+    for (let i = 0; i < arr.length; i++) {
+        let arrItem = handleNumberToArray(arr[i]);
+
+        console.log(arrItem, arr[i]);
+
+        for (let j = 0; j < arrItem.length; j++) {
+
+            console.log('Itens comparados: ', arrItem, '=', arr[i])
+            // countMap[arr[i]] = (countMap[arr[j]] || 0) + 1;
+
+            console.log(arrItem[j] === arr[i])
+
+        }
+    }
+    console.log()
+
+}
+
+console.log(contarOcorrencias([4, 5, 44, 98, 4, 5, 6]))
 
