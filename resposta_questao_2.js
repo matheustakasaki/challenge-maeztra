@@ -31,26 +31,34 @@ function contar(arr, elemento) {
 }
 function contarOcorrencias(arr) {
 
-
-    let duplos = []
+    let duplos = [
+        {
+            'numero': '',
+            'ocorrencias': 0
+        }
+    ]
     let contador = 0
     const countMap = Object.create(duplos);
 
     for (let i = 0; i < arr.length; i++) {
         let arrItem = handleNumberToArray(arr[i]);
 
-        console.log(arrItem, arr[i]);
+        console.log(arrItem, handleNumberToArray(arr[i]));
 
         for (let j = 0; j < arrItem.length; j++) {
 
-            console.log('Itens comparados: ', arrItem, '=', arr[i])
+            console.log('Itens comparados: ', arrItem, '=', arr[j])
             // countMap[arr[i]] = (countMap[arr[j]] || 0) + 1;
-
-            console.log(arrItem[j] === arr[i])
-
+            if (arrItem[j] === arr[i]) {
+                duplos.push(arrItem[j])
+            }
         }
     }
-    console.log()
+
+    let uniqueArray = duplos.filter(function (elem, pos, self) {
+        return self.indexOf(elem) == pos;
+    })
+    console.log(uniqueArray)
 
 }
 
