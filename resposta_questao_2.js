@@ -39,20 +39,18 @@ function contarOcorrencias(arr) {
             // Basicamente, estamos dizendo: atribua à `countMap[element]` o valor
             // atual (ou zero, caso não existir) somado ao número 1.
             countMap[element] = (countMap[element] || 0) + 1;
-            // Object.entries(countMap).map(([value, count]) => ({
-            //     numero: value,
-            //     quantidade: count
-            // }));
         }
     }
 
-    let filteredItems = Object.entries(countMap).map(([value, count]) => ({
+    let numbersObject = Object.entries(countMap).map(([value, count]) => ({
         numero: value,
         quantidade: count
     }))
 
+    let filteredItems = numbersObject.filter(item => item.quantidade >= 2 ? item.numero : '').map(item => item.numero)
 
-    return filteredItems.filter(number => number.quantidade >= 2 ? number.numero : '')
+
+    return filteredItems
 
 
 }
