@@ -16,7 +16,6 @@ function countItems(arr) {
     return countMap;
 }
 
-
 function contar(arr, elemento) {
     const countMap = Object.create(null);
     for (let i = 0; i < arr.length; i++) {
@@ -30,31 +29,27 @@ function contar(arr, elemento) {
     return countMap;
 }
 function contarOcorrencias(arr) {
-
-    let duplos = [
-        {
-            'numero': '',
-            'ocorrencias': 0
-        }
-    ]
-    const countMap = Object.create(duplos);
+    const countMap = Object.create(null);
 
     for (let i = 0; i < arr.length; i++) {
         let arrItem = handleNumberToArray(arr[i]);
-
         console.log(arrItem);
 
-        for (let j = 0; j < arrItem.length; j++) {
-
-            console.log('Itens comparados: ', arr[i], '=', arr[j])
-            // countMap[arr[i]] = (countMap[arr[j]] || 0) + 1;
-            if (arrItem[j] === arr[i]) {
-                duplos.push(arrItem[j])
-            }
+        for (const element of arrItem) {
+            // Basicamente, estamos dizendo: atribua à `countMap[element]` o valor
+            // atual (ou zero, caso não existir) somado ao número 1.
+            countMap[element] = (countMap[element] || 0) + 1;
+            Object.entries(countMap).map(([value, count]) => ({
+                numero: value,
+                quantidade: count
+            }));
         }
     }
 
-    console.log(duplos)
+
+
+    return countMap
+
 
 }
 
