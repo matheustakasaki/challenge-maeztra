@@ -1,59 +1,45 @@
+// Função para tornar um número em um array
 function handleNumberToArray(number) {
     let arr = String(number).split("").map((num) => {
         return Number(num)
     })
     return arr
 }
-function countItems(arr) {
-    const countMap = Object.create(null);
 
-    for (const element of arr) {
-        // Basicamente, estamos dizendo: atribua à `countMap[element]` o valor
-        // atual (ou zero, caso não existir) somado ao número 1.
-        countMap[element] = (countMap[element] || 0) + 1;
-    }
 
-    return countMap;
-}
+function handleRemoveClones(arr) {
+    const itemCount = Object.create(null);
 
-function contar(arr, elemento) {
-    const countMap = Object.create(null);
+
+    // Itera sobre o array recebido
     for (let i = 0; i < arr.length; i++) {
 
-        if (arr.includes(elemento)) {
-            countMap[elemento] = (countMap[elemento] || 0) + 1;
-        }
-
-    }
-
-    return countMap;
-}
-function contarOcorrencias(arr) {
-    const countMap = Object.create(null);
-
-    for (let i = 0; i < arr.length; i++) {
+        // Converte o número da posição atual em um array. Desta maneira, é possível diferenciarmos os dígitos
         let arrItem = handleNumberToArray(arr[i]);
-        console.log(arrItem);
 
-        for (const element of arrItem) {
-            // Basicamente, estamos dizendo: atribua à `countMap[element]` o valor
+        // Itera sob o array convertido e conta as ocorrências de cada número
+        for (const item of arrItem) {
+            // A linha abaixo quer dizer: atribua à `itemCount[item]` o valor
             // atual (ou zero, caso não existir) somado ao número 1.
-            countMap[element] = (countMap[element] || 0) + 1;
+            itemCount[item] = (itemCount[item] || 0) + 1;
         }
     }
 
-    let numbersObject = Object.entries(countMap).map(([value, count]) => ({
+    // Gera um array de objetos com para cada número e sua respectiva quantidade de ocorrências no array
+    let numbersObject = Object.entries(itemCount).map(([value, count]) => ({
         numero: value,
         quantidade: count
     }))
 
-    let filteredItems = numbersObject.filter(item => item.quantidade >= 2 ? item.numero : '').map(item => item.numero)
+
+    // Array que contém itens duplicados 
+    let filteredNumbers = numbersObject.filter(item => item.quantidade >= 2 ? item.numero : '').map(item => item.numero)
 
 
-    return filteredItems
+    return filteredNumbers
 
 
 }
 
-console.log(contarOcorrencias([4, 5, 44, 98, 4, 5, 6]))
+console.log(handleRemoveClones([4, 5, 44, 98, 4, 5, 6]))
 
