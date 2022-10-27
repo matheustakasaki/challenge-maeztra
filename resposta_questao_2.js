@@ -10,7 +10,6 @@ function handleNumberToArray(number) {
 function handleRemoveClones(arr) {
     const itemCount = Object.create(null);
 
-
     // Itera sobre o array recebido
     for (let i = 0; i < arr.length; i++) {
 
@@ -31,14 +30,10 @@ function handleRemoveClones(arr) {
         quantidade: count
     }))
 
-
     // Array que contém itens duplicados 
     let filteredNumbers = numbersObject.filter(item => item.quantidade >= 2 ? item.numero : '').map(item => item.numero)
 
-
     return filteredNumbers
-
-
 }
 
 console.log(handleRemoveClones([4, 5, 44, 98, 4, 5, 6]))
