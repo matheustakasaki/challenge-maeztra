@@ -11,6 +11,7 @@ function App() {
     <main className='bg-[#353535] h-screen w-screen'>
 
 
+      {/* Cabeçalho */}
       <Header></Header>
 
       <section>
