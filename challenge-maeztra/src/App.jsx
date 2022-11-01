@@ -2,23 +2,30 @@
 
 import './App.css'
 import Header from './components/Header'
-import MainBanner from './assets/main-banner.png'
+import World from './assets/world.png'
+import InforCard from './components/InforCard'
 function App() {
 
   return (
 
 
-    <main className='bg-[#353535] h-screen w-screen'>
+    <section className='bg-[#353535] h-screen w-screen'>
 
 
       {/* Cabeçalho */}
       <Header></Header>
 
-      <section>
+      <main className='bg-white'>
+        <InforCard />
 
-        <img className='w-full' src={MainBanner} alt="Main banner" srcset="" />
-      </section>
-    </main>
+        <section className='my-6'>
+          <h2 className='text-[#353535] font-bold text-base text-center'>Porque comprar na Maeztra?</h2>
+          <div className='my-[21px] bg-[#efefef] py-4 px-[1.6rem]'>
+            <img src={World} alt="" />
+          </div>
+        </section>
+      </main>
+    </section>
 
   )
 }
