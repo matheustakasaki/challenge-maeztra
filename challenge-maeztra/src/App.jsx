@@ -20,8 +20,15 @@ function App() {
 
         <section className='my-6'>
           <h2 className='text-[#353535] font-bold text-base text-center'>Porque comprar na Maeztra?</h2>
-          <div className='my-[21px] bg-[#efefef] py-4 px-[1.6rem]'>
-            <img src={World} alt="" />
+          <div className='my-[21px] bg-[#efefef] py-4 px-[1.6rem] flex items-center max-w-[298px] max-h-[64px]'>
+            <div>
+              <img src={World} />
+            </div>
+
+            <div>
+              <h3 className='font-bold text-sm'>Produtos Importados</h3>
+              <p className='text-xs'>Produto de Alta Qualidade</p>
+            </div>
           </div>
         </section>
       </main>
