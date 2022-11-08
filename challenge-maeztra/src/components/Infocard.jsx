@@ -7,7 +7,6 @@ export default function Infocard() {
 
 
     const slides = [{
-        imageUrl: './assets/mobile-banner.png',
         heading: 'Promoções de Outono',
         subHeading: 'Confira os melhores looks para combinar com você nesse Outono',
         callToActionText: 'Conferir'
