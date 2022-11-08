@@ -21,7 +21,7 @@ export default function Slider({ slides }) {
 
     return (
 
-        <div className={`bg-[url(./assets/mobile-banner.png)] bg-no-repeat bg-cover bg-center flex items-center min-h-[20rem] relative`}>
+        <div className='bg-[url(./assets/mobile-banner.png)] bg-no-repeat bg-cover bg-center flex items-center min-h-[20rem] relative'>
 
             <div>
                 <svg className='ml-7' onClick={goToPrevious} width="20" height="32" viewBox="0 0 20 32" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -30,11 +30,11 @@ export default function Slider({ slides }) {
             </div>
 
             <div className='min-w-[240px] px-5'>
-                <h3 className='text-3xl font-bold mb-6 '>
+                <h3 className='text-3xl font-bold mb-6 font-montserrat'>
                     {slides[currentIndex].heading}
                 </h3>
-                <p className='text-sm mb-4  '>{slides[currentIndex].subHeading}</p>
-                <button className='bg-[#FAA500] rounded w-[4.75rem] text-sm text-center p-0 h-7 font-bold'>{slides[currentIndex].callToActionText}</button>
+                <p className='text-sm mb-4 font-montserrat'>{slides[currentIndex].subHeading}</p>
+                <button className='bg-[#FAA500] rounded w-[4.75rem] text-sm text-center p-0 h-7 font-bold font-montserrat'>{slides[currentIndex].callToActionText}</button>
             </div>
 
             <div>

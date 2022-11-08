@@ -6,6 +6,11 @@ module.exports = {
     'node_modules/flowbite-react/**/*.{js,jsx,ts,tsx}'
   ],
   theme: {
-    extend: {},
+    extend: {
+      fontFamily: {
+        montserrat: "'Montserrat', sans-serif",
+        titilium: "'Titillium Web', sans-serif"
+      }
+    },
   }
 }

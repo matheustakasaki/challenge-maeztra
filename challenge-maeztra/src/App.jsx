@@ -6,6 +6,7 @@ import Header from './components/Header'
 import Infocard from './components/Infocard'
 import Tips from './components/Tips'
 import Brands from './components/Brands'
+import ProductSlider from './components/ProductSlider'
 function App() {
 
   return (
@@ -19,6 +20,8 @@ function App() {
         <Tips />
 
         <Brands />
+
+        <ProductSlider />
 
       </main>
     </section>
