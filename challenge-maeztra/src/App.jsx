@@ -5,7 +5,7 @@ import Header from './components/Header'
 
 import Infocard from './components/Infocard'
 import Tips from './components/Tips'
-import Tips from './components/Brands'
+import Brands from './components/Brands'
 function App() {
 
   return (
