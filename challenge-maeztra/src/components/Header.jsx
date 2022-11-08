@@ -4,8 +4,8 @@ export default function Header() {
     return (
         <header>
 
-            <aside className='w-full'>
-                <p className='text-[10px] text-center '> Acompanhe as melhores promoções disponíveis aqui na Maeztra.</p>
+            <aside className='w-full flex items-center justify-center'>
+                <p className='text-[.65rem] leading-[18px] my-[0.175rem] text-center text-white'> Acompanhe as melhores promoções disponíveis aqui na Maeztra.</p>
             </aside>
 
             <section className='bg-white flex justify-between py-7 px-4 h-[88px]'>
